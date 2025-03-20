@@ -78,7 +78,7 @@ function loadMoodLogs(filterType) {
         logContainer.appendChild(div);
     });
 
-    logContainer.scrollTop = logContainer.scrollHeight; // Auto-scroll to newest mood
+    logContainer.scrollTop = logContainer.scrollHeight;
 }
 
 function updateCalendarView() {
@@ -105,7 +105,7 @@ function updateCalendarView() {
 
         if (moodEntry) {
             dayBox.textContent += ` ${getMoodEmoji(moodEntry.mood)}`;
-            dayBox.classList.add("mood-logged"); // Add a visual highlight
+            dayBox.classList.add("mood-logged");
         }
 
         calendarGrid.appendChild(dayBox);
@@ -123,7 +123,6 @@ function getMoodEmoji(mood) {
     }[mood] || "😶";
 }
 
-// Utility functions for date conversion
 function formatDateToInput(date) {
     return date.toISOString().split("T")[0];
 }
