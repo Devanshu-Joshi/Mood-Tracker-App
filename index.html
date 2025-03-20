@@ -26,10 +26,25 @@
         <h2>Select a Date:</h2>
         <input type="date" id="mood-date">
 
+        <!-- Filter Dropdown -->
+        <div class="filter-container">
+            <label for="mood-filter">Filter Moods:</label>
+            <select id="mood-filter">
+                <option value="day">Day</option>
+                <option value="week">Week</option>
+                <option value="month">Month</option>
+            </select>
+        </div>
+
         <!-- Mood History Section -->
         <h2>Mood History:</h2>
         <div id="mood-history"></div>
 
+        <!-- Calendar View -->
+        <div id="calendar-view">
+            <h2>Calendar View</h2>
+            <div class="calendar-grid"></div>
+        </div>
     </div>
 
     <script src="app.js"></script>

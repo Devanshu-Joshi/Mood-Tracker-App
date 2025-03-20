@@ -1,15 +1,15 @@
-/* Modern Mood Tracker CSS */
+/* General Styles */
 body {
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(to right, #667eea, #764ba2);
-    /* Modern gradient */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    padding: 20px;
     margin: 0;
     color: #fff;
-    /* Improve contrast */
+    text-align: center;
 }
 
 .container {
@@ -17,35 +17,34 @@ body {
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 450px;
     text-align: center;
-    width: 400px;
+    color: #333;
 }
 
 h1,
 h2 {
-    color: #333;
+    color: #222;
 }
 
 /* Mood Buttons */
 .mood-buttons {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 10px;
     margin: 15px 0;
-    justify-items: center;
 }
 
 .mood-btn {
     background: #ff7eb3;
     border: none;
-    padding: 12px 20px;
-    border-radius: 8px;
+    padding: 14px;
+    border-radius: 10px;
     cursor: pointer;
     transition: 0.3s ease-in-out;
-    font-size: 16px;
+    font-size: 18px;
     color: #fff;
-    width: 100px;
-    /* Ensure uniform button size */
     text-align: center;
 }
 
@@ -54,37 +53,37 @@ h2 {
     transform: scale(1.05);
 }
 
-/* Dropdown Styling */
-.dropdown {
-    background: white;
-    padding: 10px;
-    border-radius: 6px;
-    border: 2px solid #764ba2;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: 0.3s;
-}
-
-.dropdown:hover {
-    border-color: #ff7eb3;
-}
-
-/* Calendar Input */
+/* Date Input */
 input[type="date"] {
-    /* width: 100%; */
-    padding: 10px;
+    padding: 12px;
     margin-top: 10px;
     border: 2px solid #764ba2;
     border-radius: 6px;
     font-size: 16px;
     transition: 0.3s;
+    text-align: center;
 }
 
 input[type="date"]:hover,
 input[type="date"]:focus {
     border-color: #ff7eb3;
     outline: none;
+}
+
+/* Filter Dropdown */
+.filter-container {
+    margin: 10px 0;
+}
+
+#mood-filter {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 2px solid #764ba2;
+    background: white;
+    color: #333;
+    cursor: pointer;
 }
 
 /* Mood History */
@@ -94,15 +93,101 @@ input[type="date"]:focus {
     margin-top: 15px;
     border-radius: 6px;
     text-align: left;
-    max-height: 200px;
+    max-height: 250px;
     overflow-y: auto;
     color: #333;
+    word-wrap: break-word;
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 #mood-history div {
-    background: rgba(255, 255, 255, 0.7);
-    padding: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
     margin: 5px 0;
-    border-radius: 4px;
+    border-radius: 6px;
     font-size: 14px;
+}
+
+/* Calendar View */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.calendar-grid div {
+    padding: 10px;
+    border: 1px solid #764ba2;
+    text-align: center;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.7);
+    font-weight: bold;
+    color: #333;
+    height: 2.5rem;
+}
+
+.mood-entry {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 6px;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Calendar View - Responsive */
+.calendar-day {
+    padding: 12px;
+    border: 1px solid #764ba2;
+    text-align: center;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.7);
+    font-weight: bold;
+    color: #333;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+}
+
+/* Highlight logged moods in the calendar */
+.mood-logged {
+    background: #ff7eb3;
+    color: #fff;
+    font-weight: bold;
+    border: 2px solid #ff4f88;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+
+    .mood-buttons {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+
+    .mood-btn {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .calendar-grid div {
+        height: 2rem;
+        font-size: 14px;
+        padding: 6px;
+    }
+
+    .mood-entry {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .calendar-day {
+        height: 2rem;
+        font-size: 14px;
+    }
 }
