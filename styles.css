@@ -1,0 +1,108 @@
+/* Modern Mood Tracker CSS */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #667eea, #764ba2);
+    /* Modern gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #fff;
+    /* Improve contrast */
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 400px;
+}
+
+h1,
+h2 {
+    color: #333;
+}
+
+/* Mood Buttons */
+.mood-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 15px 0;
+    justify-items: center;
+}
+
+.mood-btn {
+    background: #ff7eb3;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    font-size: 16px;
+    color: #fff;
+    width: 100px;
+    /* Ensure uniform button size */
+    text-align: center;
+}
+
+.mood-btn:hover {
+    background: #ff4f88;
+    transform: scale(1.05);
+}
+
+/* Dropdown Styling */
+.dropdown {
+    background: white;
+    padding: 10px;
+    border-radius: 6px;
+    border: 2px solid #764ba2;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.dropdown:hover {
+    border-color: #ff7eb3;
+}
+
+/* Calendar Input */
+input[type="date"] {
+    /* width: 100%; */
+    padding: 10px;
+    margin-top: 10px;
+    border: 2px solid #764ba2;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+input[type="date"]:hover,
+input[type="date"]:focus {
+    border-color: #ff7eb3;
+    outline: none;
+}
+
+/* Mood History */
+#mood-history {
+    background: rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 6px;
+    text-align: left;
+    max-height: 200px;
+    overflow-y: auto;
+    color: #333;
+}
+
+#mood-history div {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 4px;
+    font-size: 14px;
+}
