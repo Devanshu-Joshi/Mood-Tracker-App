@@ -95,7 +95,7 @@ function updateCalendarView() {
     for (let i = 1; i <= daysInMonth; i++) {
         let dayBox = document.createElement("div");
         dayBox.classList.add("calendar-day");
-        dayBox.textContent = i;
+        dayBox.textContent = String(i).padStart(2, "0");
         dayBox.setAttribute("aria-label", `Day ${i}`);
 
         let moodEntry = moods.find(entry => {
